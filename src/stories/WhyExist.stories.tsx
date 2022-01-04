@@ -7,9 +7,9 @@ export default {
   component: WhyExist,
 };
 
-const Template = (args) => <WhyExist {...args} />;
+const Template = (args: any) => <WhyExist {...args} />;
 
 export const Normal = Template.bind({});
-Normal.args = {
+(Normal as any).args = {
 };
 
