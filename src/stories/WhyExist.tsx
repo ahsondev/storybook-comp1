@@ -1,12 +1,13 @@
-import React from 'react';
+import React from 'react'
+import styled from "styled-components"
 
-import './whyexist.scss';
+import './_font.scss'
 
 interface PropsType {}
 
 export const WhyExist = (props: PropsType) => {
   return (
-    <div className='why-exist'>
+    <WhyExistContainer>
       <h2>Why we exist</h2>
       <div className='comment'>
         It's hard to find talented engineers.
@@ -100,6 +101,209 @@ export const WhyExist = (props: PropsType) => {
           </div>
         </div>
       </div>
-    </div>
+    </WhyExistContainer>
   )
 }
+
+const WhyExistContainer = styled.div`
+  background-color: #e16146;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 60px;
+
+  h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    font-size: 60px;
+    font-family: 'Roboto';
+  }
+
+  .comment {
+    margin-top: 60px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 30px;
+    font-family: 'Roboto';
+  }
+
+  .problem-solution {
+    display: flex;
+    flex-direction: column;
+    margin: 40px 0 0 0;
+
+    .icon-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      img {
+        display: block;
+      }
+    }
+
+    .header {
+      background: #eda865;
+      display: flex;
+      padding: 10px 20px;
+      justify-content: space-between;
+      text-transform: uppercase;
+      font-family: 'Roboto';
+      font-weight: bold;
+    }
+
+    .item {
+      display: flex;
+      position: relative;
+      .problem, .solution {
+        flex: 1;
+        border: 1px solid #eda865;
+        border-top: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 20px;
+        text-align: left;
+        font-family: 'Roboto';
+        font-size: 12px;
+
+        h3 {
+          font-size: 16px;
+          text-align: left;
+          margin: 0 0 10px 0;
+          font-family: 'Roboto';
+          font-weight: 500;
+        }
+
+        ul {
+          margin: 0 0 0 20px;
+          list-style-type: disc;
+
+          li {
+            margin: 0;
+            text-align: left;
+          }
+        }
+      }
+
+      .problem {
+        padding-right: 80px;
+        border-right: none;
+      }
+
+      .solution {
+        padding-left: 80px;
+      }
+
+      .image-wrapper {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        left: calc(50% - 16px);
+        top: calc(50% - 25px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .number-wrapper {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        left: calc(50% - 25px);
+        top: calc(50% - 25px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
+        font-weight: bold;
+        font-family: 'Roboto';
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .why-exist {
+    padding: 30px;
+  
+    h2 {
+      font-size: 40px;
+    }
+  
+    .comment {
+      margin-top: 20px;
+      font-size: 14px;
+      line-height: 24px;
+    }
+  
+    .problem-solution {
+      display: flex;
+      flex-direction: column;
+      margin: 40px 0 0 0;
+  
+      .icon-wrapper {
+  
+        img {
+          width: 90%;
+        }
+      }
+  
+      .item {
+        position: unset;
+        display: flex;
+        flex-direction: column;
+        .problem, .solution {
+          position: relative;
+          flex: 1;
+          border: 1px solid #eda865;
+          border-top: none;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          padding: 20px;
+          text-align: left;
+          font-family: 'Roboto';
+          font-size: 12px;
+  
+        }
+  
+        .problem {
+          padding-bottom: 60px;
+        }
+  
+        .solution {
+          padding-top: 80px;
+        }
+  
+        .image-wrapper {
+          position: absolute;
+          width: unset;
+          height: unset;
+          left: calc(50% - 60px);
+          bottom: -58px;
+          top: unset;
+          transform: rotate(90deg);
+
+          img {
+            display: block;
+          }
+        }
+  
+        .number-wrapper {
+          position: absolute;
+          width: 50px;
+          height: unset;
+          left: calc(50% - 25px);
+          bottom: -25px;
+          top: unset;
+        }
+      }
+    }
+  }
+`;
