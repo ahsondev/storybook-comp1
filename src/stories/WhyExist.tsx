@@ -23,7 +23,7 @@ export const WhyExist = (props: PropsType) => {
         <br/>
         We indentifiled some problems in the industries and how combining our unique talents can solve them.
       </div>
-      <div className='problem-solution'>
+      <ProblemSolution>
         <div className='icon-wrapper'>
           <img src="/problem_solution_icon.png" alt="problem-solution" />
         </div>
@@ -31,7 +31,7 @@ export const WhyExist = (props: PropsType) => {
           <div>Problem</div>
           <div>Solution</div>
         </div>
-        <div className='item'>
+        <Item>
           <div className='problem'>
             <h3>Finding Good Engineers is Hard:</h3>
             <div className='content'>
@@ -55,8 +55,8 @@ export const WhyExist = (props: PropsType) => {
               Also a lot of our engineers come from oversees
             </div>
           </div>
-        </div>
-        <div className='item'>
+        </Item>
+        <Item>
           <div className='problem'>
             <h3>Interviewing Takes Forever:</h3>
             <div className='content'>
@@ -74,8 +74,8 @@ export const WhyExist = (props: PropsType) => {
             <br/>
             We ONLY recruit the top 5%. Our intensive 6 hour interview process ensures that our employees are yop notch. We also work directly with these developers for a month on our internal consulting projects.
           </div>
-        </div>
-        <div className='item'>
+        </Item>
+        <Item>
           <div className='problem'>
             <h3>Finding Good Engineers is Hard:</h3>
             <div className='content'>
@@ -99,8 +99,8 @@ export const WhyExist = (props: PropsType) => {
               Also a lot of our engineers come from oversees
             </div>
           </div>
-        </div>
-      </div>
+        </Item>
+      </ProblemSolution>
     </WhyExistContainer>
   )
 }
@@ -130,105 +130,7 @@ const WhyExistContainer = styled.div`
     font-family: 'Roboto';
   }
 
-  .problem-solution {
-    display: flex;
-    flex-direction: column;
-    margin: 40px 0 0 0;
-
-    .icon-wrapper {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-
-      img {
-        display: block;
-      }
-    }
-
-    .header {
-      background: #eda865;
-      display: flex;
-      padding: 10px 20px;
-      justify-content: space-between;
-      text-transform: uppercase;
-      font-family: 'Roboto';
-      font-weight: bold;
-    }
-
-    .item {
-      display: flex;
-      position: relative;
-      .problem, .solution {
-        flex: 1;
-        border: 1px solid #eda865;
-        border-top: none;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        padding: 20px;
-        text-align: left;
-        font-family: 'Roboto';
-        font-size: 12px;
-
-        h3 {
-          font-size: 16px;
-          text-align: left;
-          margin: 0 0 10px 0;
-          font-family: 'Roboto';
-          font-weight: 500;
-        }
-
-        ul {
-          margin: 0 0 0 20px;
-          list-style-type: disc;
-
-          li {
-            margin: 0;
-            text-align: left;
-          }
-        }
-      }
-
-      .problem {
-        padding-right: 80px;
-        border-right: none;
-      }
-
-      .solution {
-        padding-left: 80px;
-      }
-
-      .image-wrapper {
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        left: calc(50% - 16px);
-        top: calc(50% - 25px);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .number-wrapper {
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        left: calc(50% - 25px);
-        top: calc(50% - 25px);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 40px;
-        font-weight: bold;
-        font-family: 'Roboto';
-      }
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .why-exist {
+  @media (max-width: 768px) {
     padding: 30px;
   
     h2 {
@@ -240,70 +142,163 @@ const WhyExistContainer = styled.div`
       font-size: 14px;
       line-height: 24px;
     }
-  
-    .problem-solution {
-      display: flex;
-      flex-direction: column;
-      margin: 40px 0 0 0;
-  
-      .icon-wrapper {
-  
-        img {
-          width: 90%;
-        }
-      }
-  
-      .item {
-        position: unset;
-        display: flex;
-        flex-direction: column;
-        .problem, .solution {
-          position: relative;
-          flex: 1;
-          border: 1px solid #eda865;
-          border-top: none;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: flex-start;
-          padding: 20px;
-          text-align: left;
-          font-family: 'Roboto';
-          font-size: 12px;
-  
-        }
-  
-        .problem {
-          padding-bottom: 60px;
-        }
-  
-        .solution {
-          padding-top: 80px;
-        }
-  
-        .image-wrapper {
-          position: absolute;
-          width: unset;
-          height: unset;
-          left: calc(50% - 60px);
-          bottom: -58px;
-          top: unset;
-          transform: rotate(90deg);
+  }
+`
 
-          img {
-            display: block;
-          }
-        }
-  
-        .number-wrapper {
-          position: absolute;
-          width: 50px;
-          height: unset;
-          left: calc(50% - 25px);
-          bottom: -25px;
-          top: unset;
-        }
+const ProblemSolution = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0 0 0;
+
+  .icon-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    img {
+      display: block;
+    }
+  }
+
+  .header {
+    background: #eda865;
+    display: flex;
+    padding: 10px 20px;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-family: 'Roboto';
+    font-weight: bold;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin: 40px 0 0 0;
+
+    .icon-wrapper {
+      img {
+        width: 90%;
       }
     }
   }
-`;
+`
+
+const Item = styled.div`
+  display: flex;
+  position: relative;
+
+  .problem, .solution {
+    flex: 1;
+    border: 1px solid #eda865;
+    border-top: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    text-align: left;
+    font-family: 'Roboto';
+    font-size: 12px;
+
+    h3 {
+      font-size: 16px;
+      text-align: left;
+      margin: 0 0 10px 0;
+      font-family: 'Roboto';
+      font-weight: 500;
+      line-height: 20px;
+    }
+
+    ul {
+      margin: 0 0 0 20px;
+      list-style-type: disc;
+
+      li {
+        margin: 0;
+        text-align: left;
+      }
+    }
+  }
+
+  .problem {
+    padding-right: 80px;
+    border-right: none;
+  }
+
+  .solution {
+    padding-left: 80px;
+  }
+
+  .image-wrapper {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: calc(50% - 16px);
+    top: calc(50% - 25px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .number-wrapper {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: calc(50% - 25px);
+    top: calc(50% - 25px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Roboto';
+  }
+
+  @media (max-width: 768px) {
+    position: unset;
+    display: flex;
+    flex-direction: column;
+    .problem, .solution {
+      position: relative;
+      flex: 1;
+      border: 1px solid #eda865;
+      border-top: none;
+      display: flex;
+      padding: 20px;
+      font-size: 12px;
+
+      h3 {
+      }
+    }
+
+    .problem {
+      padding-bottom: 60px;
+    }
+
+    .solution {
+      padding-top: 80px;
+    }
+
+    .image-wrapper {
+      position: absolute;
+      width: unset;
+      height: unset;
+      left: calc(50% - 60px);
+      bottom: -58px;
+      top: unset;
+      transform: rotate(90deg);
+
+      img {
+        display: block;
+      }
+    }
+
+    .number-wrapper {
+      position: absolute;
+      width: 50px;
+      height: unset;
+      left: calc(50% - 25px);
+      bottom: -25px;
+      top: unset;
+    }
+  }
+`
